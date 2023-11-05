@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import PopUpMenu from "../2-popupmenu/popupmenu";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
-export default function Navbar({ exoDisplayRef }) {
+export default function Navbar({ exoView }) {
   const [isOpen, setIsOpen] = useState(false);
   function clickHandler() {
     if (!isOpen) {
@@ -13,28 +13,28 @@ export default function Navbar({ exoDisplayRef }) {
     }
     setIsOpen(!isOpen);
   }
-  console.log(exoDisplayRef);
 
   return (
     <div>
-      {isOpen ? <PopUpMenu /> : <></>}
+      <PopUpMenu isOpen={isOpen} />
+
       <div
-        className="flex items-center justify-between pt-5 pb-2 z-30 fixed w-screen "
+        className="flex items-center justify-between pt-5 pb-2 z-30 fixed  w-screen "
         style={{
           backgroundColor: isOpen ? "rgb(23,23,23)" : "",
           color: isOpen ? "rgb(212,212,212)" : "white",
         }}
-      > 
+      >
         <div className="overflow-hidden">
           <motion.div
             className="flex"
             variants={{
               initial: { y: "130%", rotate: "5deg" },
               viewT: { y: "0%", rotate: "0deg" },
-              viewF: { y: "-130%", rotate: "-5deg" },
+              viewF: { y: "-130%", rotate: "0deg" },
             }}
             initial={"initial"}
-            animate={exoDisplayRef ? "viewT" : "viewF"}
+            animate={exoView ? "viewT" : "viewF"}
             transition={{ duration: 0.125, ease: "backInOut" }}
           >
             <div className="pl-5 font-bold text-3xl">exo</div>
@@ -43,8 +43,8 @@ export default function Navbar({ exoDisplayRef }) {
         </div>
 
         <div>
-          <div className="flex pr-5 items-center">
-            <div className=" pr-3 text-sm font-medium" onClick={clickHandler}>
+          <div className="flex pr-5 items-center" onClick={clickHandler}>
+            <div className=" pr-3 text-sm font-medium">
               {isOpen ? "Close" : "Menu"}
             </div>
             <div

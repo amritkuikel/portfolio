@@ -8,15 +8,20 @@ import { useInView } from "framer-motion";
 
 export default function FirstPage() {
   const exoRef = useRef(null);
-  const exoDisplayRef = useInView(exoRef);
+  const exoView = useInView(exoRef);
+  const txtRef = useRef(null);
+  const txtView = useInView(txtRef);
+
   return (
-    <div className="relative">
+    <div>
+      <Navbar exoView={exoView} />
       <BgPic />
-      <Navbar exoDisplayRef = {exoDisplayRef}/>
-      <div className="h-screen w-screen relative">
-        <div className="w-screen h-1 " ref={exoRef}></div>
+      <div className="absolute h-screen w-screen  top-0">
+        <div className="h-20" ref={txtRef}>
+          <div className="h-1 " ref={exoRef}></div>
+        </div>
       </div>
-      <Texts />
+      <Texts txtView={txtView}/>
     </div>
   );
 }
