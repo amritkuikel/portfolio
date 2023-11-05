@@ -16,10 +16,10 @@ export default function Navbar({ exoView }) {
 
   return (
     <div>
-      <PopUpMenu isOpen={isOpen} />
+      
 
       <div
-        className="flex items-center justify-between pt-5 pb-2 z-30 fixed  w-screen "
+        className="flex items-center justify-between pt-5 pb-2 "
         style={{
           backgroundColor: isOpen ? "rgb(23,23,23)" : "",
           color: isOpen ? "rgb(212,212,212)" : "white",
@@ -38,7 +38,7 @@ export default function Navbar({ exoView }) {
             transition={{ duration: 0.125, ease: "backInOut" }}
           >
             <div className="pl-5 font-bold text-3xl">exo</div>
-            <div className="pl-1  font-light text-3xl  italic">ape</div>
+            <div className="px-1  font-light text-3xl  italic ">ape</div>
           </motion.div>
         </div>
 
@@ -64,6 +64,7 @@ export default function Navbar({ exoView }) {
           </div>
         </div>
       </div>
+      <PopUpMenu isOpen={isOpen} />
     </div>
   );
 }

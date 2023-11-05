@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-export default function Texts({ txtView }) {
+export default function Text1({ txtView }) {
   const txt1 = [
     "Global digital design studio partnering",
     "with brands and business that create",
@@ -7,13 +7,10 @@ export default function Texts({ txtView }) {
     "live, work and unwind.",
   ];
   const txt2 = ["Digital", "Design", "Experience"];
-  const txt3 = [
-    "We help experience-driven companies thrive by making their audience feel the refined intricacies of their brand and product in the digital space.",
-    "Unforgettable journeys start with a click.",
-  ];
+ 
   return (
-    <div>
-      <div className="absolute px-5 z-10  bottom-0">
+    <div >
+      <div className=" px-5  ">
         <div className="text-lg font-medium pb-5">
           {txt1.map((txt, index) => (
             <div key={index} className="overflow-hidden">
@@ -26,7 +23,7 @@ export default function Texts({ txtView }) {
                 initial={"initial"}
                 animate={txtView ? "viewT" : "viewF"}
                 transition={{
-                  duration: (index/5)+0.1,
+                  duration: index / 5 + 0.4,
                   ease: "backInOut",
                   delay: 0.1,
                 }}
@@ -38,26 +35,30 @@ export default function Texts({ txtView }) {
         </div>
         <div className="text-6xl mb-5 font-medium ">
           {txt2.map((txt, index) => (
-            <div key={index} className="pb-2">
-              {txt}
+            <div key={index} className="overflow-hidden">
+              <motion.div
+                className="pb-2"
+                variants={{
+                  initial: { y: "135%", rotate: "10deg" },
+                  viewT: { y: "0%", rotate: "0deg" },
+                  viewF: { y: "-135%", rotate: "-10deg" },
+                }}
+                initial={"initial"}
+                animate={txtView ? "viewT" : "viewF"}
+                transition={{
+                  duration: index / 5 + 0.4,
+                  ease: "backInOut",
+                  delay: 0.4,
+                }}
+              >
+                {txt}
+              </motion.div>
             </div>
           ))}
         </div>
         <div className="pt-3 pb-5  text-2xl">&darr;</div>
       </div>
-      <div className="absolute px-5 z-10 ">
-        <div className="text-lg font-medium pb-5">
-          {txt3.map((txt, index) => (
-            <div key={index}>{txt}</div>
-          ))}
-        </div>
-        <div className="flex items-center">
-          <div className=" border-2 rounded-full h-2 w-2 -ml-3 mr-1 "></div>
-          <div className="text-lg font-medium underline underline-offset-4">
-            The Studio
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 }

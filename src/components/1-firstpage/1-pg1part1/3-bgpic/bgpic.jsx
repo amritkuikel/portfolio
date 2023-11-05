@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import bgImg from "../../../../public/assests/images/exo-ape-hero-1.jpg";
+import bgImg from "../../../../../public/assests/images/exo-ape-hero-1.jpg";
 export default function BgPic() {
   return (
-    <div className="h-[105vh] w-screen overflow-hidden">
+    <div className="h-[105vh] w-screen">
       <motion.div
         initial={{
           y: "5vh",
@@ -18,11 +18,12 @@ export default function BgPic() {
         <Image
           alt="background image"
           src={bgImg}
-          className=" h-[105vh] w-screen object-cover  object-center absolute"
-        ></Image>
+          className=" h-[105vh] w-screen object-cover  object-center"
+        >
+        </Image>
       </motion.div>
 
-      <div className="bg-black h-[105vh] w-screen   relative bg-opacity-20"></div>
+      <div className="bg-black h-[105vh] w-screen  bg-opacity-10 "></div>
     </div>
   );
 }

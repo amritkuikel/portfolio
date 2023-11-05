@@ -15,7 +15,7 @@ export default function PopUpMenu({ isOpen }) {
           exit={{ rotate: "15deg", scale: 1.3, y: "-150%" }}
           animate={{ y: "0%", scale: 1, rotate: "0deg", opacity: 1 }}
           transition={{ duration: 1.3, ease: "backInOut" }}
-          className="h-screen w-screen fixed bg-neutral-900 text-neutral-300 z-20"
+          className="h-screen w-screen fixed bg-neutral-900 text-neutral-300 "
         >
           <div className="pl-10 pt-[20vh]">
             <div className="overflow-hidden">
