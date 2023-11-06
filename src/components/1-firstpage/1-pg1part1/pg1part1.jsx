@@ -24,11 +24,12 @@ export default function Pg1Part1() {
     offset: ["start start", "end start"],
   });
   const springScroll = useSpring(scrollYProgress);
-  const textScrollSpeed = useTransform(springScroll, [0, 1], ["0vh", "-50vh"]);
+  const textScrollSpeed = useTransform(springScroll, [0, 1], ["0vh", "-30vh"]);
+  const picScrollSpeed = useTransform(springScroll, [0, 1], ["0vh", "10vh"]);
   const picScaling = useTransform(springScroll,[0,1],['1','1.3'])
 
   return (
-    <div className="w-screen overflow-hidden">
+    <div>
       <div className="absolute h-screen w-screen top-0">
         <div className="h-36 " ref={parallaxRef}>
           <div className="h-10 " ref={txtRef}>
@@ -36,7 +37,7 @@ export default function Pg1Part1() {
           </div>
         </div>
       </div>
-      <motion.div className="relative -z-10" style={{scale:picScaling}}>
+      <motion.div className="relative -z-10" style={{scale:picScaling,y:picScrollSpeed}}>
         <BgPic />
       </motion.div>     
       <motion.div>
