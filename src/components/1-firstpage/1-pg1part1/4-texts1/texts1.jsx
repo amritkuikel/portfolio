@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-export default function Text1({ txtView }) {
+export default function Text1({ txtView,arrowOpacity }) {
   const txt1 = [
     "Global digital design studio partnering",
     "with brands and business that create",
@@ -56,7 +56,7 @@ export default function Text1({ txtView }) {
             </div>
           ))}
         </div>
-        <div className="pt-3 pb-5  text-2xl">&darr;</div>
+        <motion.div className="pt-3 pb-5  text-2xl" style={{opacity:arrowOpacity}}>&darr;</motion.div>
       </div>
       
     </div>

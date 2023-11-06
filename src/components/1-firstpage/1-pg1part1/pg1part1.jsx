@@ -25,26 +25,34 @@ export default function Pg1Part1() {
   });
   const springScroll = useSpring(scrollYProgress);
   const textScrollSpeed = useTransform(springScroll, [0, 1], ["0vh", "-30vh"]);
-  const picScrollSpeed = useTransform(springScroll, [0, 1], ["0vh", "10vh"]);
-  const picScaling = useTransform(springScroll,[0,1],['1','1.3'])
+  const picScrollSpeed = useTransform(springScroll, [0, 1], ["0vh", "15vh"]);
+  const picScaling = useTransform(springScroll, [0, 1], ["1", "1.3"]);
+  const arrowOpacity = useTransform(springScroll, [0, 1], ["0.9", "0.1"]);
+  const overlayOpacity = useTransform(springScroll, [0, 1], ["0.1", "0.4"]);
 
   return (
     <div>
       <div className="absolute h-screen w-screen top-0">
-        <div className="h-36 " ref={parallaxRef}>
+        <div className="h-56"  ref={parallaxRef}>
           <div className="h-10 " ref={txtRef}>
             <div className="h-1 " ref={exoRef}></div>
           </div>
         </div>
       </div>
-      <motion.div className="relative -z-10" style={{scale:picScaling,y:picScrollSpeed}}>
-        <BgPic />
-      </motion.div>     
+      <motion.div
+        className="relative -z-10 top-0"
+        style={{ scale: picScaling,y:picScrollSpeed }}
+      >
+        <BgPic overlayOpacity={overlayOpacity} />
+      </motion.div>
       <motion.div>
-        <motion.div className=" absolute bottom-0"style={{y:textScrollSpeed}}>
-          <Text1 txtView={txtView} />
+        <motion.div
+          className=" absolute bottom-0"
+          style={{ y: textScrollSpeed }}
+        >
+          <Text1 txtView={txtView} arrowOpacity={arrowOpacity} />
         </motion.div>
-        <motion.div className="absolute" style={{y:textScrollSpeed}}>
+        <motion.div className="absolute" style={{ y: textScrollSpeed }}>
           <Text2 />
         </motion.div>
       </motion.div>
