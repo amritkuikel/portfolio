@@ -10,8 +10,9 @@ export default function Text1({ txtView,arrowOpacity }) {
  
   return (
     <div >
-      <div className=" px-5  ">
-        <div className="text-lg font-medium pb-5">
+      <div className=" px-5  md:px-8 ">
+        {/* global design */}
+        <div className="text-lg font-medium pb-5 sm:pb-8 sm:text-xl md:tracking-wider  ">
           {txt1.map((txt, index) => (
             <div key={index} className="overflow-hidden">
               <motion.div
@@ -33,11 +34,12 @@ export default function Text1({ txtView,arrowOpacity }) {
             </div>
           ))}
         </div>
-        <div className="text-6xl mb-5 font-medium ">
+        {/* digital design */}
+        <div className="text-6xl mb-5 font-medium sm:mb-8 sm:text-7xl    ">
           {txt2.map((txt, index) => (
             <div key={index} className="overflow-hidden">
               <motion.div
-                className="pb-2"
+                className="pb-2 md:pb-5"
                 variants={{
                   initial: { y: "135%", rotate: "10deg" },
                   viewT: { y: "0%", rotate: "0deg" },
@@ -56,7 +58,8 @@ export default function Text1({ txtView,arrowOpacity }) {
             </div>
           ))}
         </div>
-        <motion.div className="pt-3 pb-5  text-2xl" style={{opacity:arrowOpacity}}>&darr;</motion.div>
+        {/* arrow */}
+        <motion.div className=" pb-5  text-2xl sm:pb-8 sm:text-3xl lg:text-4xl" style={{opacity:arrowOpacity}}>&darr;</motion.div>
       </div>
       
     </div>

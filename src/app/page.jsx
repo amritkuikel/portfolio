@@ -15,7 +15,7 @@ export default function Home() {
     requestAnimationFrame(raf);
   });
   return (
-    <div className=" text-white w-screen overflow-hidden">
+    <div className=" text-white w-screen overflow-x-hidden">
       <FirstPage />
       <Test />
     </div>

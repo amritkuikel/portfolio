@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import bgImg from "../../../../../public/assests/images/exo-ape-hero-1.jpg";
 export default function BgPic({overlayOpacity}) {
   return (
-    <div className="h-[105vh] w-screen" style={{ opacity:overlayOpacity }}>
+    <div className=" w-screen " style={{ opacity:overlayOpacity }}>
       <motion.div
         initial={{
           y: "5vh",
@@ -18,7 +18,7 @@ export default function BgPic({overlayOpacity}) {
         <Image
           alt="background image"
           src={bgImg}
-          className=" h-[105vh] w-screen object-cover  object-center"
+          className="h-[105vh] w-screen object-cover  object-top"
         ></Image>
       </motion.div>
 
