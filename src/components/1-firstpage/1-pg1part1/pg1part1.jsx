@@ -25,7 +25,7 @@ export default function Pg1Part1() {
   });
   const springScroll = useSpring(scrollYProgress);
   const textScrollSpeed = useTransform(springScroll, [0, 1], ["0vh", "-30vh"]);
-  const picScrollSpeed = useTransform(springScroll, [0, 1], ["0vh", "15vh"]);
+  const picScrollSpeed = useTransform(springScroll, [0, 1], ["0vh", "20vh"]);
   const picScaling = useTransform(springScroll, [0, 1], ["1", "1.3"]);
   const arrowOpacity = useTransform(springScroll, [0, 1], ["0.9", "0.1"]);
   const overlayOpacity = useTransform(springScroll, [0, 1], ["0.1", "0.4"]);
@@ -41,7 +41,7 @@ export default function Pg1Part1() {
       </div>
       <motion.div
         className="relative -z-10 top-0"
-        style={{ scale: picScaling,y:picScrollSpeed }}
+        style={{ scale: picScaling}}
       >
         <BgPic overlayOpacity={overlayOpacity} />
       </motion.div>

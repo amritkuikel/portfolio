@@ -6,7 +6,7 @@ export default function Text2() {
   return (
     <div >
       <div className=" px-5 md:px-8 z-10 md:tracking-wider  ">
-        <div className="text-lg font-medium pb-5 sm:pb-8 sm:text-xl pr-52">
+        <div className="text-lg font-medium pb-5 sm:pb-8 sm:text-xl md:pr-52">
           {txt3.map((txt, index) => (
             <div key={index}>{txt}</div>
           ))}

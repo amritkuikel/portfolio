@@ -18,7 +18,7 @@ export default function Navbar({ exoView }) {
     <div>
       {/* navbar */}
       <div
-        className="flex items-center justify-between pt-5 sm:pt-8 "
+        className="flex items-center justify-between pt-5 pb-2 sm:pt-8 "
         style={{
           backgroundColor: isOpen ? "rgb(23,23,23)" : "",
           color: isOpen ? "rgb(212,212,212)" : "white",
@@ -37,8 +37,8 @@ export default function Navbar({ exoView }) {
             animate={exoView ? "viewT" : "viewF"}
             transition={{ duration: 0.125, ease: "backInOut" }}
           >
-            <div className="pl-5 font-bold text-3xl sm:text-5xl lg:text-6xl md:pl-8">exo</div>
-            <div className="px-1  font-light text-3xl  italic sm:text-5xl lg:text-6xl">ape</div>
+            <div className="pl-5 font-bold text-3xl sm:text-4xl lg:text-5xl md:pl-8">exo</div>
+            <div className="px-1  font-light text-3xl  italic sm:text-4xl lg:text-5xl">ape</div>
           </motion.div>
         </div>
         {/* Menu mobile */}
@@ -67,10 +67,10 @@ export default function Navbar({ exoView }) {
         <div className="hidden sm:block">
           {" "}
           <div className="flex text-sm font-semibold sm:text-xl lg:text-2xl">
-            <div className="pr-3">Work</div>
-            <div className="pr-3">Studio</div>
-            <div className="pr-3">News</div>
-            <div className="pr-8">Contact</div>
+            <div className="pr-3" onClick={clickHandler}>Work</div>
+            <div className="pr-3" onClick={clickHandler}>Studio</div>
+            <div className="pr-3" onClick={clickHandler}>News</div>
+            <div className="pr-8" onClick={clickHandler}>Contact</div>
           </div>
         </div>
       </div>
